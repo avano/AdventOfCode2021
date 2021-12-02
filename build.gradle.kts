@@ -26,9 +26,6 @@ dependencies {
     // Use the Kotlin JDK 8 standard library.
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 
-    // This dependency is used by the application.
-    implementation("com.google.guava:guava:30.1.1-jre")
-
     testImplementation("org.junit.jupiter:junit-jupiter:5.8.0")
 }
 tasks.withType<Test> {
