@@ -33,5 +33,5 @@ tasks.withType<Test> {
 }
 application {
     // Define the main class for the application.
-    mainClass.set("com.github.avano.adventofcode.AppKt")
+    mainClass.set("com.github.avano.adventofcode.AOCKt")
 }
