@@ -1,13 +1,23 @@
+@file:OptIn(ExperimentalTime::class)
+
 package com.github.avano.adventofcode
 
 import com.github.avano.adventofcode.day.Day
 import java.util.stream.IntStream
 import kotlin.streams.toList
+import kotlin.time.ExperimentalTime
+import kotlin.time.measureTimedValue
 
 private fun runDay(d: Day) {
     println("Day ${d.number}:")
-    println("Part 1: " + d.part1(d.inputs.first))
-    println("Part 2: " + d.part2(d.inputs.second))
+    val (part1, part1Time) = measureTimedValue {
+        d.part1(d.inputs.first)
+    }
+    val (part2, part2Time) = measureTimedValue {
+        d.part2(d.inputs.second)
+    }
+    println("Part 1: $part1 ($part1Time)")
+    println("Part 2: $part2 ($part2Time)")
     println("-----")
 }
 
