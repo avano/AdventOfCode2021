@@ -57,9 +57,9 @@ class Day04 : Day() {
         val boards = mutableListOf<BingoBoard>()
 
         for (i in 2 until input.size step 6) {
-            val b = mutableListOf<List<BingoNumber>>()
+            val b = mutableListOf<MutableList<BingoNumber>>()
             for (j in i..i + 4) {
-                b.add(input[j].split(' ').filter { it.isNotEmpty() }.map { BingoNumber(it.toInt()) })
+                b.add(input[j].split(' ').filter { it.isNotEmpty() }.map { BingoNumber(it.toInt()) } as MutableList<BingoNumber>)
             }
             boards.add(BingoBoard(Array2D(b)))
         }
