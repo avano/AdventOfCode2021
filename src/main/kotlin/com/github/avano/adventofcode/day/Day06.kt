@@ -3,7 +3,7 @@ package com.github.avano.adventofcode.day
 import com.github.avano.adventofcode.util.Input
 
 class Day06 : Day() {
-    private fun Input.populate(m: MutableList<Long>) = asString().split(',').map { it.toInt() }.forEach { m[it] = m[it] + 1L }
+    private fun Input.populate(m: MutableList<Long>) = asInts().forEach { m[it] = m[it] + 1L }
 
     private fun solve(input: Input, days: Int): Long {
         val lanternfish = MutableList(9) { 0L }
