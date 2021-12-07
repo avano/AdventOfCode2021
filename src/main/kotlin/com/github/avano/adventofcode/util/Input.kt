@@ -5,5 +5,6 @@ class Input(private val lines: List<String>) {
 
     fun asList(): List<String> = lines
     fun asIntList(): List<Int> = lines.map { it.toInt() }
+    fun asInts(): List<Int> = lines[0].split(',').map { it.toInt() }
     fun asString(): String = lines.joinToString(separator = "\n").trim()
 }
