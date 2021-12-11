@@ -34,7 +34,7 @@ class Day10 : Day() {
         return score
     }
 
-    private fun String.getImcompleteScore(): Long {
+    private fun String.getIncompleteScore(): Long {
         val scoreMap = mapOf(')' to 1, ']' to 2, '}' to 3, '>' to 4)
         val bracketList = mutableListOf<Char>()
         for (char in this) {
@@ -52,7 +52,7 @@ class Day10 : Day() {
     }
 
     override fun part2(input: Input): Any {
-        val scores = input.asList().filter { it.getCorruptedScore() == 0 }.map { it.getImcompleteScore() }.filter { it != 0L }.sorted()
+        val scores = input.asList().filter { it.getCorruptedScore() == 0 }.map { it.getIncompleteScore() }.filter { it != 0L }.sorted()
         return scores[scores.size / 2]
     }
 }
