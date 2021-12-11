@@ -34,6 +34,28 @@ class Array2D<T>(val list: List<MutableList<T>>) {
         return result
     }
 
+    fun adjacent(c: Coordinate): List<Coordinate> = adjacent(c.x, c.y)
+    fun adjacent(x: Int, y: Int): List<Coordinate> {
+        val result = neighbours(x, y) as MutableList
+        if (x > 0) {
+            if (y > 0) {
+                result.add(Coordinate(x - 1, y - 1))
+            }
+            if (y < rowsSize - 1) {
+                result.add(Coordinate(x - 1, y + 1))
+            }
+        }
+        if (x < columnsSize - 1) {
+            if (y > 0) {
+                result.add(Coordinate(x + 1, y - 1))
+            }
+            if (y < rowsSize - 1) {
+                result.add(Coordinate(x + 1, y + 1))
+            }
+        }
+        return result
+    }
+
     override fun toString(): String {
         val sb = StringBuilder()
         for (y in 0 until rowsSize) {
