@@ -7,6 +7,7 @@ class Array2D<T>(val list: List<MutableList<T>>) {
     fun get(x: Int, y: Int): T = list[y][x]
     fun get(c: Coordinate): T = get(c.x, c.y)
     fun set(x: Int, y: Int, t: T) = list[y].set(x, t)
+    fun set(c: Coordinate, t: T) = set(c.x, c.y, t)
 
     fun forEach(f: (T) -> Unit) {
         for (y in 0 until rowsSize) {
