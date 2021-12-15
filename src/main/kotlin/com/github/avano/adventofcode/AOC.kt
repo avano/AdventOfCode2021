@@ -13,10 +13,10 @@ private fun runDay(d: Day) {
     val (part1, part1Time) = measureTimedValue {
         d.part1(d.inputs.first)
     }
+    println("Part 1: $part1 ($part1Time)")
     val (part2, part2Time) = measureTimedValue {
         d.part2(d.inputs.second)
     }
-    println("Part 1: $part1 ($part1Time)")
     println("Part 2: $part2 ($part2Time)")
     println("-----")
 }
